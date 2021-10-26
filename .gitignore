@@ -1,5 +1,2 @@
-<<<<<<< HEAD
 node_module
-=======
-node_module/
->>>>>>> 9999e1b1dddf9e648fea75dfcd2042e885a4d9a5
+.vscode
