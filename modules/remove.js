@@ -3,6 +3,6 @@ export default class Remove {
     let allBooks = JSON.parse(localStorage.getItem('bookList'));
     allBooks = allBooks.filter((book) => book.id.toString() !== id.toString());
     localStorage.setItem('bookList', JSON.stringify(allBooks));
-    location.reload();
+    localStorage.reload();
   }
 }

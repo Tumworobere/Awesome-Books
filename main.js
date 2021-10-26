@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import Remove from './modules/remove.js';
 import Add from './modules/add.js';
 
