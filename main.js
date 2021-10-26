@@ -34,8 +34,8 @@ const refreshDOM = () => {
       const { id } = e.target.parentNode;
       allBooks = allBooks.filter((book) => book.id.toString() !== id.toString());
       localStorage.setItem('bookList', JSON.stringify(allBooks));
-  
-      location.reload();
+      bookList.innerHTML = '';
+      refreshDOM();
     });
     const newBook = document.createElement('li');
     const newTitle = document.createElement('p');
