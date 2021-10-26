@@ -36,7 +36,8 @@ To get a local copy up and running follow these simple example steps.
 
 
 👤 **Hamza Bin Ali Tarar**
-- GitHub: []()
+
+- GitHub: [@Lockless404](https://github.com/lockless404)
 
 ## 🤝 Contributing
 
