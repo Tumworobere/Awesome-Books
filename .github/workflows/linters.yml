@@ -31,7 +31,11 @@ jobs:
           npm install --save-dev hint@6.x
           [ -f .hintrc ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/html-css-js/.hintrc
       - name: Webhint Report
+<<<<<<< HEAD
         run: npx hint --telemetry=off .
+=======
+        run: npx hint --telemetry=off
+>>>>>>> 9999e1b1dddf9e648fea75dfcd2042e885a4d9a5
   stylelint:
     name: Stylelint
     runs-on: ubuntu-18.04

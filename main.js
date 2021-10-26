@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Remove from './modules/remove.js';
 import Add from './modules/add.js';
 
@@ -12,6 +13,32 @@ if (localStorage.getItem('bookList') === null) {
 if (localStorage.getItem('id') === null) {
   localStorage.setItem('id', JSON.stringify(0));
 }
+=======
+const bookTitle = document.getElementById('title');
+const bookAuthor = document.getElementById('author');
+const bookList = document.getElementById('book-list');
+const button = document.getElementById('btn');
+let allBooks = [];
+let id;
+
+class Book {
+    id = this.id;
+
+    name = this.name;
+
+    author = this.author;
+}
+
+if (localStorage.getItem('bookList') === null) {
+  localStorage.setItem('bookList', []);
+}
+
+if (localStorage.getItem('id') === null) {
+  localStorage.setItem('id', JSON.stringify(0));
+  id = JSON.parse(localStorage.getItem('id'));
+}
+
+>>>>>>> 9999e1b1dddf9e648fea75dfcd2042e885a4d9a5
 const refreshDOM = () => {
   allBooks = JSON.parse(localStorage.getItem('bookList'));
   allBooks.forEach((book) => {
@@ -22,7 +49,14 @@ const refreshDOM = () => {
     removeBtn.innerText = 'Remove';
     removeBtn.addEventListener('click', (e) => {
       const { id } = e.target.parentNode;
+<<<<<<< HEAD
       remove.remove(id);
+=======
+      allBooks = allBooks.filter((book) => book.id.toString() !== id.toString());
+      localStorage.setItem('bookList', JSON.stringify(allBooks));
+      bookList.innerHTML = '';
+      refreshDOM();
+>>>>>>> 9999e1b1dddf9e648fea75dfcd2042e885a4d9a5
     });
     const newBook = document.createElement('li');
     const newTitle = document.createElement('p');
@@ -33,6 +67,7 @@ const refreshDOM = () => {
     newBook.appendChild(newTitle);
     newBook.appendChild(newAuthor);
     newBook.appendChild(removeBtn);
+<<<<<<< HEAD
     bookContainer.appendChild(newBook);
   });
 };
@@ -43,3 +78,36 @@ createNew.addEventListener('click', (e) => {
   bookContainer.innerHTML = '';
   refreshDOM();
 });
+=======
+    bookList.appendChild(newBook);
+  });
+};
+
+window.onload = refreshDOM;
+button.addEventListener('click', (e) => {
+  e.preventDefault();
+  const name = bookTitle.value;
+  bookTitle.value = '';
+  const author = bookAuthor.value;
+  bookAuthor.value = '';
+  if (!(name.length < 3 || author.length < 3)) {
+    id = JSON.parse(localStorage.getItem('id'));
+    id += 1;
+    localStorage.setItem('id', JSON.stringify(id));
+    const newBook = new Book();
+    newBook.id = id;
+    newBook.name = name;
+    newBook.author = author;
+    if (localStorage.getItem('bookList').length !== 0) {
+      allBooks = JSON.parse(localStorage.getItem('bookList'));
+    } else {
+      allBooks = [];
+    }
+
+    allBooks.unshift(newBook);
+    localStorage.setItem('bookList', JSON.stringify(allBooks));
+    bookList.innerHTML = '';
+    refreshDOM();
+  }
+});
+>>>>>>> 9999e1b1dddf9e648fea75dfcd2042e885a4d9a5
