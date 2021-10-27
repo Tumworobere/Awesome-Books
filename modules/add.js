@@ -1,5 +1,5 @@
-/* eslint-disable linebreak-style */
 import Book from './book.js';
+
 const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 let allBooks;
