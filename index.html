@@ -8,14 +8,18 @@
     <title>Awesome Books</title>
 </head>
 <body>
-    <section>
-    <h1>Awesome books</h1>
+    <section class="awesome-books">
+    <h1>All awesome books</h1>
     <div class="booklist">
     <ul class="book-list" id="book-list">
     </ul>
 </div>
 </section>
+
+<div class="line"></div>
+<section>
 <form class = "book-form" id ="book-form">
+    <h2>Add a new book</h2>
     <div class="form-group">
         <input type="text" id="title" class="form-control" placeholder="Title" required>
     </div>
@@ -25,7 +29,10 @@
     </div>
     <br>
     <button  type="button" class="btn" id="btn">Add</button>
+
 </form>
+</section>
 <script type="module" src="main.js"></script>
 </body>
+
 </html>
